@@ -4,12 +4,13 @@
  * @author: 布尔
  * @name: mqtt客户端
  * @desc: 介绍
- * @LastEditTime: 2023-04-25 15:32:42
+ * @LastEditTime: 2023-07-05 23:08:16
  */
 declare (strict_types=1);
 namespace Eykj\MqttClient;
 
 use PhpMqtt\Client\MqttClient as PMqttClient;
+use function Hyperf\Support\env;
 
 class MqttClient extends  PMqttClient
 {
