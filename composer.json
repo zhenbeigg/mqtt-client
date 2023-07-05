@@ -1,0 +1,17 @@
+{
+    "name": "eykj/mqtt-client",
+    "description": "一一科技websocket客户端",
+    "license": "MIT",
+    "keywords": [
+        "eykj",
+        "mqtt-client"
+    ],
+    "require": {
+        "php-mqtt/client": "^1.8",
+    },
+    "autoload": {
+        "psr-4": {
+            "Eykj\\MqttClient\\": "src/"
+        }
+    }
+}
