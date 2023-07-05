@@ -7,7 +7,7 @@
         "mqtt-client"
     ],
     "require": {
-        "php-mqtt/client": "^1.8",
+        "php-mqtt/client": "^1.8"
     },
     "autoload": {
         "psr-4": {
