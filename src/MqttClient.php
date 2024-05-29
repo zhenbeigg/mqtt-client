@@ -4,7 +4,7 @@
  * @author: 布尔
  * @name: mqtt客户端
  * @desc: 介绍
- * @LastEditTime: 2024-04-02 11:27:49
+ * @LastEditTime: 2024-05-29 16:47:51
  */
 
 declare(strict_types=1);
@@ -54,6 +54,8 @@ class MqttClient extends  PMqttClient
         $this->publish($topic, $data, $qos, $retain);
         /*断开*/
         $this->disconnect();
+        /* 记录日志 */
+        alog(['topic' => $topic, 'data' => $data], 6);
     }
 
     /**
