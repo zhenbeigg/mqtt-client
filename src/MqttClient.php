@@ -45,8 +45,9 @@ class MqttClient extends  PMqttClient
             ->setUsername(env('MQTT_USER', ''))
             ->setPassword(env('MQTT_PASS', ''))
             ->setKeepAliveInterval(60);
-        /* 标记会话状态  0 (false)：客户端在断开连接后希望服务器保留其会话状态。当客户端重新连接时，它将继续使用相同的会话 ID，并且可以访问之前订阅的主题。
-1 (true)：客户端希望服务器在断开连接后清除其会话状态。当客户端重新连接时，它将创建一个新的会话 ID，并且必须重新订阅所有主题。*/
+        /* 标记会话状态  0 (false)：客户端在断开连接后希望服务器保留其会话状态。当客户端重新连接时，它将继续使用相同的会话 ID，并且可以访问之前订阅的主题。1 (true)：客户端希望服务器在断开连接后清除其会话状态。当客户端重新连接时，它将创建一个新的会话 ID，并且必须重新订阅所有主题。*/
+        /* data参数内增加时间戳 */
+        $data['timestamp'] = sprintf('%03d', round(microtime(true) * 1000));
         $clean_session = true;
         /*链接*/
         $this->connect($connectionSettings, $clean_session);
