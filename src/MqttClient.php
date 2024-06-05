@@ -40,8 +40,6 @@ class MqttClient extends  PMqttClient
      */
     public function send(string $topic, string $data, int $qos = 2, bool $retain = false)
     {
-        /* data参数内增加时间戳 */
-        $data['timestamp'] = sprintf('%03d', round(microtime(true) * 1000));
         /* 设置配置 */
         $connectionSettings  = ($this->ConnectionSettings)
             ->setUsername(env('MQTT_USER', ''))
