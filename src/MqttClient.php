@@ -66,7 +66,7 @@ class MqttClient extends  PMqttClient
     public function post_device_send(array $param)
     {
         $topic = 'YY2099_' . $param['deviceSn'];
-        $data = ['func' => $param['func'], 'data' => $param['data'], 'errmsg' => $param['errmsg'], 'errcode' => $param['errcode']];
+        $data = ['func' => $param['func'], 'data' => $param['data'], 'errmsg' => $param['errmsg'], 'errcode' => $param['errcode'], 'timestamp' => sprintf('%03d', round(microtime(true) * 1000))];
         return $this->send($topic, json_encode($data, 320));
     }
 }
