@@ -6,6 +6,9 @@
         "eykj",
         "mqtt-client"
     ],
+    "require": {
+        "php-mqtt/client": "^2.0"
+    },
     "autoload": {
         "psr-4": {
             "Eykj\\MqttClient\\": "src/"
